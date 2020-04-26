@@ -1,5 +1,11 @@
 <template>
   <div class="hello">
+    
+    <div class="">
+      <p class="text-info">Data to child component and view from child</p>
+      <Child course="Vue js" version="2.6.2" rating="4.5/5"></Child>
+    </div>
+
     <h1>{{ msg }}</h1>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
@@ -31,12 +37,16 @@
 </template>
 
 <script>
-export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
+  import Child from './child'
+  export default {
+    name: 'HelloWorld',
+    props: {
+      msg: String
+    },
+    components:{
+      Child
+    }
   }
-}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
